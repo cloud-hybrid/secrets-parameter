@@ -1,9 +1,9 @@
 {
     "name": "@cloud-technology/secrets-parameter",
     "private": false,
-    "version": "0.0.1",
+    "version": "0.1.9",
     "type": "module",
-    "main": "unit-testing/index.js",
+    "main": "distribution/index.js",
     "description": "Interface Extension of `Parameter` for AWS Secrets-Manager",
     "types": "distribution",
     "repository": {
@@ -14,9 +14,6 @@
     "license": "BSD 1-Clause License",
     "author": "Jacob B. Sanders",
     "scripts": {
-        "test": "node unit-testing",
-        "start": "node unit-testing/watch",
-        "watch": "node unit-testing/watch",
         "build": "tsc --watch",
         "compile": "tsc",
         "clean": "rm -rf node_modules declarations distribution .idea .vscode .eclipse",
@@ -25,14 +22,10 @@
         "prepublishOnly": "npm run clean && npm install --silent && npm run compile"
     },
     "dependencies": {
-        "@cloud-technology/parameter": "latest"
+        "@cloud-technology/parameter": "^0.3.69"
     },
     "devDependencies": {
         "@types/node": "latest",
-        "@jest/globals": "latest",
-        "@types/jest": "latest",
-        "jest": "latest",
-        "ts-jest": "latest",
         "@typescript-eslint/eslint-plugin": "latest",
         "@typescript-eslint/experimental-utils": "latest",
         "@typescript-eslint/parser": "latest",
@@ -78,7 +71,7 @@
             "node_modules"
         ]
     },
-    "bin": {
-        "secrets-parameter": "unit-testing/index.js"
+    "exports": {
+        ".": "./distribution/index.js"
     }
 }

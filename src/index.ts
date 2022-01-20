@@ -1,6 +1,5 @@
-export * from "./secret";
-export default await import("./secret").then(
-    ($) => {
-        return $.Secret;
-    }
-);
+import { Secret } from "./secret.js";
+
+export { Secret };
+
+export default { Secret };
